@@ -1,0 +1,29 @@
+{
+  "name": "socketio-ts-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "ts-node server.ts",
+    "client": "ts-node client.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^22.15.19",
+    "@types/socket.io-client": "^1.4.36",
+    "crypto": "^1.0.1",
+    "jwt-decode": "^4.0.0",
+    "mongodb": "^6.16.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "thirdweb": "^5.99.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}
