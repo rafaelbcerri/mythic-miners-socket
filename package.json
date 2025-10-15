@@ -1,0 +1,36 @@
+{
+    "name": "websocket-game-server",
+    "version": "1.0.0",
+    "description": "WebSocket game server with handler events pattern",
+    "main": "dist/server.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "tsx src/server.ts",
+        "dev": "tsx watch src/server.ts",
+        "stop": "pkill -f 'tsx.*src/server.ts' || echo 'No tsx processes found'",
+        "setup-env": "echo 'Creating .env.local template...' && cat > .env.local << 'EOF'\n# Server Configuration\nPORT=3031\nNODE_ENV=development\nWS_HEARTBEAT_INTERVAL=30000\n\n# MongoDB Configuration\nMONGODB_URI=mongodb://localhost:27017/MythicMiners\n\n# Thirdweb Configuration\nTHIRDWEB_CLIENT_ID=your_thirdweb_client_id_here\nTHIRDWEB_SECRET_KEY=your_thirdweb_secret_key_here\nTHIRDWEB_PRIVATE_KEY=your_private_key_here\n\n# Web URL for authentication\nWEB_URL=http://localhost:3000\n\n# Contract Addresses\nICO_MANAGER_ADDRESS=0x0000000000000000000000000000000000000000\nRELICS_ADDRESS=0x0000000000000000000000000000000000000000\nEQUIPMENTS_ADDRESS=0x0000000000000000000000000000000000000000\nAMAZONITE_ADDRESS=0x0000000000000000000000000000000000000000\nAIRDROP_MANAGER_ADDRESS=0x0000000000000000000000000000000000000000\nBETA_ADDRESS=0x0000000000000000000000000000000000000000\nEQUIPMENTS_MANAGER_ADDRESS=0x0000000000000000000000000000000000000000\n\n# Optional: Hardhat RPC URL for Docker environments\n# HARDHAT_RPC_URL=http://host.docker.internal:8545\n\n# Optional: Offline mode flag\n# IS_OFFLINE=true\nEOF"
+    },
+    "keywords": [
+        "websocket",
+        "game",
+        "server"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "aws-sdk": "^2.1692.0",
+        "dotenv": "^17.2.0",
+        "jwt-decode": "^4.0.0",
+        "mongoose": "^8.15.1",
+        "thirdweb": "^5.101.1",
+        "ws": "^8.14.2"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.150",
+        "@types/dotenv": "^8.2.3",
+        "@types/node": "^20.8.0",
+        "@types/ws": "^8.5.5",
+        "tsx": "^4.0.0",
+        "typescript": "^5.2.0"
+    }
+}
